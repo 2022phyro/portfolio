@@ -1,5 +1,5 @@
 /* color palette from <https://github.com/vuejs/theme> */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Space+Grotesk&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Ubuntu&family=Space+Grotesk&family=Playfair+Display&display=swap');
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -60,15 +60,15 @@
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-family: "Playfair Display";
-  background-color: inherit;
+  font-family: "IBM Plex Sans";
+  /* background-color: inherit; */
   /* color: var(--primary); */
 }
 
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--secondary);
   transition:
     color 0.5s,
     background-color 0.5s;

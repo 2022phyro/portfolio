@@ -10,12 +10,11 @@ import { ref, onMounted } from 'vue';
 
 const phrases = [
   "Software Engineer",
-  "Frontend Web Developer",
-  "Backend Web Developer",
+  "Full Stack Developer",
   "Nocode Web Developer"
 ];
 
-const speed = 300; // Adjust the speed of typing (milliseconds per character)
+const speed = 100; // Adjust the speed of typing (milliseconds per character)
 const waitTime = 2500; // Adjust the time to wait before clearing the text (milliseconds)
 const phraseIndex = ref(0);
 const displayedText = ref('');
@@ -69,15 +68,21 @@ onMounted(() => {
 /* Optional: Add some styling to make it look like typed text */
 p {
   height: 40px;
+  margin: 10px 20px;
+  margin-left: 0;
+  font-size: 16px;
 }
 span {
-  font-family: 'Space Grotesk';
+  font-family: 'Ubuntu';
   /* white-space: pre; */
-  display: inline-block;
+  display: block;
   position: relative;
   border: none;
   font-weight: 700;
   font-size: 24px;
+  z-index: 0;
+  transition: all 0.5s ease;
+
 }
 
 /* Add blinking cursor effect during typing and waiting */
@@ -85,7 +90,8 @@ span::after {
   content: '';
   position: absolute;
   width: 2px;
-  height: 100%;
+  margin-top: 5px;
+  height: 24px;
   background-color: #000;
   animation: blinkCursor 0.8s infinite alternate;
 }

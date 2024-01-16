@@ -36,14 +36,14 @@ const links = [
     grid-column: 1 / span 1;
     padding-left: 50px;
     padding-top: 30px;
-    /* border: 1px solid red; */
-    align-self: stretch;
+    display: flex;
+    flex-flow: column;
+
     color: var(--primary);
 }
 h1 {
     font-size: 32px;
     font-weight: 800;
-    margin-bottom: 15px;
 }
 .nav {
     margin-top: 30px;
@@ -65,13 +65,14 @@ h1 {
     display: flex;
     flex-flow: row;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     background-color: transparent;
+    z-index: 1;
     /* border: 1px solid red; */
 }
 .round span {
     font-size: 16px;
-    font-family: 'Space Grotesk';
+    font-family: 'Ubuntu';
     font-weight: 600;
     text-transform: capitalize;
     opacity: 0.5;
@@ -132,7 +133,7 @@ a.router-link-exact-active, .round span {
 }
 .aob {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
@@ -159,5 +160,48 @@ a.router-link-exact-active, .round span {
 }
 .aob > button  svg {
     font-size: 20px;
+}
+@media screen and (max-width: 950px) {
+    .hero {
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .hero {
+        display: flex;
+        flex-flow: column;
+    }
+    .nav {
+        justify-self: center;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .nav .round {
+        display: none;
+    }
+}
+@media screen and (max-width: 470px) {
+    .aob {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-right: 20px;
+    }
+    .aob > button:first-child {
+        grid-row: 1;
+        grid-column: 1;
+        align-self: center;
+    }
+    .aob > button:last-child {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: end; 
+        align-self: center;
+    }
 }
 </style>

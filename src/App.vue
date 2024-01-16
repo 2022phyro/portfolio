@@ -1,8 +1,8 @@
 <script setup>
-import MyHeader from './components/MyHeader.vue';
+// import MyHeader from './components/MyHeader.vue';
 import AboutView from '@/views/AboutView.vue';
-import HomeView from '@/views/HomeView.vue';
 import HeroView from './views/HeroView.vue';
+import ExperienceView from './views/ExperienceView.vue';
 </script>
 
 <template>
@@ -10,7 +10,8 @@ import HeroView from './views/HeroView.vue';
     <HeroView/>
     <span class="divider"></span>
     <div class="body">
-      
+      <AboutView/>
+      <ExperienceView/>
     </div>
   </div>
 </template>
@@ -32,10 +33,21 @@ import HeroView from './views/HeroView.vue';
 
 }
 .body {
-  position: absolute;
-  top: 60px;
-  border: 1px solid green;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  /* border: 1px solid red; */
+  margin: 0 30px;
 
 }
-
+@media screen and (max-width: 900px) {
+  #app {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+  .divider {
+    display: none;
+  }
+}
 </style>
