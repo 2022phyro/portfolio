@@ -71,6 +71,7 @@ p {
   margin: 10px 20px;
   margin-left: 0;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 span {
   font-family: 'Ubuntu';

@@ -1,14 +1,19 @@
 <script setup>
+import { useRouter } from 'vue-router';
 const job1 = [
   'python', 'html5', 'css', 'javascript', 'mysql'
 ]
 const intern1 = [
   'python', 'django', 'postgresql'
 ]
+const navigate = useRouter()
+const goTo = (link) => {
+  navigate(link)
+}
 </script>
 <template>
-  <section id="experiences">
-    <h2>What I have been up to...</h2>
+  <section id="experience">
+    <h2 @click="goTo(`https://www.m-rinternational.com/`)">What I have been up to...</h2>
     <article class="job">
       <h3>
         <span class="hd1">
@@ -49,8 +54,8 @@ const intern1 = [
   </section>
 </template>
 <style scoped>
-#experiences {
-  margin-top: 30px;
+#experience {
+  padding-top: 30px;
   display: flex;
   flex-flow: column;
   gap: 10px;
@@ -87,7 +92,7 @@ h3 {
   align-items: baseline;
 }
 .hd2 {
-  gap: 3px;
+  gap: 5px;
   justify-content: flex-start;
   padding-bottom: 5px;
 }
