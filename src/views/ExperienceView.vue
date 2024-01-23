@@ -7,7 +7,7 @@ const intern1 = [
 ]
 </script>
 <template>
-  <section id="experience">
+  <section id="experience" class="section">
     <h2>What I have been up to...</h2>
     <article class="job">
       <a href="https://www.m-rinternational.com/">
@@ -49,24 +49,13 @@ const intern1 = [
   </section>
 </template>
 <style scoped>
-#experience {
-  padding-top: 30px;
-  display: flex;
-  flex-flow: column;
-  gap: 10px;
-}
-h2 {
-  font-family: "Ubuntu";
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--primary)
-}
 article.job {
   border-radius: 10px;
   padding: 15px;
   background-color: #f0f3dade;
   margin-top: 10px;
-  box-shadow: 2px 2px 2px #ccc;
+  box-shadow: 1px 1px 1px #ccc;
+  border: 1px solid #f0f3dade;
 }
 
 a {

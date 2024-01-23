@@ -1,63 +1,68 @@
 <script setup>
+const ilens = ["sanic", "haproxy", "python", "socketio", "opencv", "gpt4vision", "clarifai"]
+const sf = ["apiflask", "python", "gemini", "vue"]
 </script>
 <template>
-    <section id="projects">
+    <section id="projects" class="section">
         <h2>What kept me busy (so far)... </h2>
         <ul>
-            <article class="job">
-      <a href="https://www.m-rinternational.com/">
-        <span class="hd1">
-          <span class="role">Web Development & Python Instructor</span>
-          <span class="date">July 2023 - Present</span>
-        </span>
-        <span class="hd2">
-          <span class="company">Mr-International</span>
-          <span class="stack" v-for="(job, i) in job1" :key="i">{{ job }}</span>
-        </span>
-      </a>
-      <p>
-        Implements and teach modern principles and pratices in web development.    
-        Aided in the design and implementation of an in house learning management system for use
-        by the students    
-      </p>
-    </article>
-    <article class="job">
-      <a href="https://techprojectonbudget.com">
-        <span class="hd1">
-          <span class="role">Intern</span>
-          <span class="date">November 2023 - Present</span>
-        </span>
-        <span class="hd2">
-          <span class="company">TechProjectOnBudget</span>
-          <span class="stack" v-for="(job, i) in intern1" :key="i">{{ job }}</span>
-        </span>
-      </a>
-      <p>
-        Designed and built a task tracker system complete with its own commenting and labelling features
-        as well as provisions for attachments for project management inhouse. 
-        Redesigned and collaborated with like minded individuals on a forum system for the intranet allowing
-        different "forums" to be associated with each aspect of the organization yet linked to the single user.
-        Collaborated with the rest of the team in converting the backend application from a monolithic to a 
-        fully modern microservice collection
-      </p>
-    </article>
+            <li class="job">
+              <a href="https://www.m-rinternational.com/">
+                <span class="hd1">
+                  <span class="role">Ilens</span>
+                </span>
+                <span class="hd2">
+                  <span class="stack" v-for="(job, i) in ilens" :key="i">{{ job }}</span>
+                </span>
+              </a>
+              <img src="/mysql.jpeg">
+              <p>
+                My most challenging yet. I was fortunate to be part of a wonderful team that designed and built
+                an AI powered assistant tht helps blind people by telling them what is in front of them
+                and interpreting their surroundings for them. I worked on the backend integrating a series of 
+                AIs to help achieve the task. It was built to communicate based on audio input and cues
+              </p>
+            </li>
+            <li class="job">
+              <a href="https://techprojectonbudget.com">
+                <span class="hd1">
+                  <span class="role">Secret Formula</span>
+                </span>
+                <span class="hd2">
+                  <span class="stack" v-for="(job, i) in sf" :key="i">{{ job }}</span>
+                </span>
+              </a>
+              <img src="/mysql.jpeg">
+              <p>
+                Designed and built a task tracker system complete with its own commenting and labelling features
+                as well as provisions for attachments for project management inhouse. 
+                Redesigned and collaborated with like minded individuals on a forum system for the intranet allowing
+                different "forums" to be associated with each aspect of the organization yet linked to the single user.
+                Collaborated with the rest of the team in converting the backend application from a monolithic to a 
+                fully modern microservice collection
+              </p>
+            </li>
         </ul>
     </section>
 </template>
 <style scoped>
-#projects {
-  padding-top: 30px;
+#projects ul {
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-flow: column;
-  gap: 10px;
+  gap: 20px;
 }
-h2 {
-  font-family: "Ubuntu";
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--primary)
+#projects ul li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 1px 1px 1px #ccc;
 }
-
 article.job {
   border-radius: 10px;
   padding: 15px;
@@ -67,6 +72,8 @@ article.job {
 }
 
 a {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
   display: flex;
   flex-flow: column;
   align-content: flex-start;
@@ -74,9 +81,24 @@ a {
   padding-bottom: 0;
   text-decoration: none;
   cursor: pointer;
+  padding-bottom: 10px;
+  height: fit-content;
   border-bottom: 1px solid #ccc;
 }
-
+img {
+  grid-column: 2 / 2;
+  grid-row: 1 / 3;
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  align-self: center;
+}
+li p {
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+  margin-top: 10px;
+  font-size: 14px;
+}
 .job p {
   margin-top: 10px;
 }

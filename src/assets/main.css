@@ -1,3 +1,15 @@
 @import './base.css';
 
-
+.section {
+    color: #1c2e2b;
+    padding-top: 30px;
+    display: flex;
+    flex-flow: column;
+    gap: 15px;
+}
+h2 {
+    font-family: "Ubuntu";
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--primary)
+  }

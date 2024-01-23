@@ -1,7 +1,7 @@
 <script setup>
 </script>
 <template>
- <section id="me">
+ <section id="me" class="section">
   <p>
     So I’m more of a newbie as most people would like to say. 
     I began programming in 2022 fresh from school and looking for a new world.
@@ -18,11 +18,3 @@
  </section>
 </template>
 
-<style scoped>
-#me {
-  padding-top: 60px;
-  display: flex;
-  flex-flow: column;
-  gap: 10px;
-}
-</style>

@@ -7,9 +7,9 @@ defineProps({
 const emit = defineEmits(['scrolledTo'])
 const links = [
   { text: 'me', icn: ['fas', 'user-astronaut'] },
-  { text: 'experience', icn: ['fas', 'user-astronaut'] },
-  { text: 'projects', icn: ['fas', 'user-astronaut'] },
-  { text: 'connect', icn: ['fas', 'user-astronaut'] }
+  { text: 'experience', icn: ['fas', 'briefcase'] },
+  { text: 'projects', icn: ['fas', 'toolbox'] },
+  { text: 'connect', icn: ['fas', 'phone'] }
 ]
 
 // const activeSection = ref('me')
@@ -44,11 +44,11 @@ const scrollToSection = (sectionId) => {
     <div class="aob">
       <button>
         <my-icon :icon="['far', 'file-lines']" />
-        <span>View my resume</span>
+        <span>My resume</span>
       </button>
       <button>
         <my-icon :icon="['fas', 'folder-open']" />
-        <span>See other projects</span>
+        <span>My projects</span>
       </button>
     </div>
   </section>
@@ -74,15 +74,15 @@ h1 {
 .nav {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 75px 75px 75px 75px 15px 75px;
-  grid-template-rows: 100px 75px 75px 100px;
+  grid-template-columns: 50px 50px 50px 50px 15px 50px;
+  grid-template-rows: 80px 75px 75px 80px;
 }
 .nav img {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   grid-row: 1 / span 4;
-  grid-column: 1 / span 3;
+  grid-column: 1 / 3;
   align-self: center;
   justify-self: start;
 }
@@ -105,7 +105,7 @@ h1 {
   color: rgb(51, 50, 50);
   text-transform: capitalize;
 }
-.icon {
+.round span.icon {
   background-color: rgb(51, 50, 50);
   width: 40px;
   height: 40px;
@@ -171,7 +171,7 @@ div.active.round span {
 }
 .aob > button {
   height: 40px;
-  width: 200px;
+  width: 150px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
   outline: none;

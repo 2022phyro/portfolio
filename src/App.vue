@@ -4,6 +4,7 @@ import HeroView from './views/HeroView.vue';
 import ExperienceView from './views/ExperienceView.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import ProjectView from './views/ProjectView.vue';
+import ContactView from './views/ContactView.vue';
 
 const activeSection = ref("me")
 const bodyRef = ref(null)
@@ -54,6 +55,7 @@ onBeforeUnmount(() => {
       <AboutView/>
       <ExperienceView/>
       <ProjectView/>
+      <ContactView/>
     </div>
   </div>
 </template>
@@ -61,7 +63,7 @@ onBeforeUnmount(() => {
 <style scoped>
 #app {
   display: grid;
-  grid-template-columns: 500px 15px calc(100vw - 515px);
+  grid-template-columns: 400px 15px calc(100vw - 415px);
   grid-template-rows: auto  auto;
   width: 100vw;
   background-color: var(--secondary);
@@ -82,10 +84,12 @@ onBeforeUnmount(() => {
   padding: 0 30px;
   height: 100vh;
   overflow: auto;
+  gap: 20px;
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
   align-content: flex-start;
+  padding-bottom: 150px;
 }
 @media screen and (max-width: 900px) {
   #app {
