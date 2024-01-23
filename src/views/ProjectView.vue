@@ -1,15 +1,10 @@
 <script setup>
-const job1 = [
-  'python', 'html5', 'css', 'javascript', 'mysql'
-]
-const intern1 = [
-  'python', 'django', 'postgresql'
-]
 </script>
 <template>
-  <section id="experience">
-    <h2>What I have been up to...</h2>
-    <article class="job">
+    <section id="projects">
+        <h2>What kept me busy (so far)... </h2>
+        <ul>
+            <article class="job">
       <a href="https://www.m-rinternational.com/">
         <span class="hd1">
           <span class="role">Web Development & Python Instructor</span>
@@ -46,10 +41,11 @@ const intern1 = [
         fully modern microservice collection
       </p>
     </article>
-  </section>
+        </ul>
+    </section>
 </template>
 <style scoped>
-#experience {
+#projects {
   padding-top: 30px;
   display: flex;
   flex-flow: column;
@@ -61,6 +57,7 @@ h2 {
   font-size: 20px;
   color: var(--primary)
 }
+
 article.job {
   border-radius: 10px;
   padding: 15px;

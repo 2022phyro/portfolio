@@ -3,6 +3,7 @@ import AboutView from '@/views/AboutView.vue';
 import HeroView from './views/HeroView.vue';
 import ExperienceView from './views/ExperienceView.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import ProjectView from './views/ProjectView.vue';
 
 const activeSection = ref("me")
 const bodyRef = ref(null)
@@ -52,6 +53,7 @@ onBeforeUnmount(() => {
     <div class="body" ref="bodyRef">
       <AboutView/>
       <ExperienceView/>
+      <ProjectView/>
     </div>
   </div>
 </template>
