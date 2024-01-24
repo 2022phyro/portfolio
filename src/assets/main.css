@@ -13,3 +13,19 @@ h2 {
     font-size: 20px;
     color: var(--primary)
   }
+  .stack {
+    font-size: 12px;
+    padding: 0 5px;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    background: var(--secondary);
+    /* border-radius: 10px; */
+      align-self: baseline;
+      border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  @media screen and (max-width: 900px) {
+    .section {
+      padding-top: 90px;
+    }
+  }

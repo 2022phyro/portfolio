@@ -79,7 +79,7 @@ a {
   align-items: baseline;
 }
 .hd2 {
-  gap: 5px;
+  gap: 7px;
   justify-content: flex-start;
   padding-bottom: 5px;
 }
@@ -95,14 +95,5 @@ a {
   font-weight: 800;
   color: black;
   margin-right: 5px;
-}
-.stack {
-  font-size: 12px;
-  padding: 0 5px;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-  background: var(--secondary);
-  border-radius: 10px;
-    align-self: baseline;
 }
 </style>

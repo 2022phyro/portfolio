@@ -1,6 +1,5 @@
 <script setup>
 import TypeWriter from '@/components/TypeWriter.vue'
-
 defineProps({
   activeSection: String
 })
@@ -29,27 +28,29 @@ const scrollToSection = (sectionId) => {
   <section class="hero">
     <h1>Ugwuanyi Afam</h1>
     <TypeWriter />
-    <div class="nav">
-      <img src="/chameleon.jpg" />
-      <div
-        v-for="(link, idx) in links"
-        :key="idx"
-        :class="{ 'active': activeSection === link.text, 'round': true, ['n-' + idx]: true }"
-        @click="scrollToSection(link.text)"
-      >
-        <span class="icon"><my-icon :icon="link.icn"></my-icon></span>
-        <span>{{ link.text }}</span>
+    <div class="navigation">
+      <div class="nav">
+        <img src="/chameleon.jpg" />
+        <div
+          v-for="(link, idx) in links"
+          :key="idx"
+          :class="{ 'active': activeSection === link.text, 'round': true, ['n-' + idx]: true }"
+          @click="scrollToSection(link.text)"
+        >
+          <span class="icon"><my-icon :icon="link.icn"></my-icon></span>
+          <span>{{ link.text }}</span>
+        </div>
       </div>
-    </div>
-    <div class="aob">
-      <button>
-        <my-icon :icon="['far', 'file-lines']" />
-        <span>My resume</span>
-      </button>
-      <button>
-        <my-icon :icon="['fas', 'folder-open']" />
-        <span>My projects</span>
-      </button>
+      <div class="aob">
+        <a href="/resume.txt" class="button">
+          <my-icon :icon="['far', 'file-lines']" />
+          <span>My resume</span>
+        </a>
+        <a href="https://github.com/2022phyro" class="button">
+          <my-icon :icon="['fas', 'folder-open']" />
+          <span>My projects</span>
+        </a>
+      </div>
     </div>
   </section>
 </template>
@@ -70,6 +71,14 @@ const scrollToSection = (sectionId) => {
 h1 {
   font-size: 32px;
   font-weight: 800;
+}
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 30px;
+  gap: 30px;
 }
 .nav {
   margin-top: 30px;
@@ -169,7 +178,7 @@ div.active.round span {
   gap: 20px;
   margin-top: 40px;
 }
-.aob > button {
+.aob > .button {
   height: 40px;
   width: 150px;
   border-top-right-radius: 15px;
@@ -183,12 +192,19 @@ div.active.round span {
   flex-flow: row;
   gap: 10px;
   font-size: 16px;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px grey;
   align-items: center;
   justify-content: flex-start;
   padding-left: 13px;
-  box-shadow: 1px 1px 1px #ccc;
+  position: relative;
+  transition: all 0.3s ease;
 }
-.aob > button svg {
+.aob > .button:active {
+  right: -1px;
+  bottom: -1px;
+}
+.aob > .button svg {
   font-size: 20px;
 }
 @media screen and (max-width: 950px) {
@@ -199,7 +215,12 @@ div.active.round span {
 @media screen and (max-width: 900px) {
   .hero {
     display: flex;
+    margin-top: 60px;
     flex-flow: column;
+  }
+  .navigation {
+    justify-content: center;
+    gap: 20px;
   }
   .nav {
     justify-self: center;
@@ -222,16 +243,21 @@ div.active.round span {
     gap: 15px;
     margin-right: 20px;
   }
-  .aob > button:first-child {
+  .aob > .button:first-child {
     grid-row: 1;
     grid-column: 1;
     align-self: center;
   }
-  .aob > button:last-child {
+  .aob > .button:last-child {
     grid-column: 1;
     grid-row: 2;
     justify-self: end;
     align-self: center;
+  }
+}
+@media screen and (max-width: 410px) {
+  .aob {
+    margin-top: 0;
   }
 }
 </style>

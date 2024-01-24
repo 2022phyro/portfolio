@@ -6,7 +6,7 @@
     <ul>
       <li mail-to="https://phyrokelstein2@gmail.com"><my-icon :icon="['fas', 'envelope']"></my-icon></li>
       <li><a href="https://x.com/PhyroKelstein"><my-icon :icon="['fab', 'x-twitter']"></my-icon></a></li>
-      <li><a href="https://github.com.2022phyro"><my-icon :icon="['fab', 'github']"></my-icon></a></li>
+      <li><a href="https://github.com/2022phyro"><my-icon :icon="['fab', 'github']"></my-icon></a></li>
       <li><a href="https://ng.linkedin.com/in/afam-ugwuanyi"><my-icon :icon="['fab', 'linkedin']"></my-icon></a></li>
     </ul>
 </section>
@@ -24,7 +24,7 @@ ul {
 li {
   border: 1px solid var(--primary);
   padding: auto;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   font-size: 30px;
   width: 50px;
   display: flex;
@@ -33,6 +33,8 @@ li {
   align-items: center;
   cursor: pointer;
   height: 50px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   /* vertical-align: center; */
   color: var(--primary);
   transition: all 0.3s ease-in-out;
@@ -50,5 +52,8 @@ li a {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+}
+#connect {
+  padding-bottom: 150px;
 }
 </style>

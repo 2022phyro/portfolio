@@ -1,13 +1,14 @@
 <script setup>
 const ilens = ["sanic", "haproxy", "python", "socketio", "opencv", "gpt4vision", "clarifai"]
 const sf = ["apiflask", "python", "gemini", "vue"]
+const simpleShell = ["c", "linux", "bash", "shell"]
 </script>
 <template>
     <section id="projects" class="section">
         <h2>What kept me busy (so far)... </h2>
         <ul>
             <li class="job">
-              <a href="https://www.m-rinternational.com/">
+              <a href="https://ilens-v1.vercel.app/">
                 <span class="hd1">
                   <span class="role">Ilens</span>
                 </span>
@@ -15,7 +16,7 @@ const sf = ["apiflask", "python", "gemini", "vue"]
                   <span class="stack" v-for="(job, i) in ilens" :key="i">{{ job }}</span>
                 </span>
               </a>
-              <img src="/mysql.jpeg">
+              <img src="/ilens.png">
               <p>
                 My most challenging yet. I was fortunate to be part of a wonderful team that designed and built
                 an AI powered assistant tht helps blind people by telling them what is in front of them
@@ -24,7 +25,7 @@ const sf = ["apiflask", "python", "gemini", "vue"]
               </p>
             </li>
             <li class="job">
-              <a href="https://techprojectonbudget.com">
+              <a href="https://secret-formula.vercel.app">
                 <span class="hd1">
                   <span class="role">Secret Formula</span>
                 </span>
@@ -32,14 +33,29 @@ const sf = ["apiflask", "python", "gemini", "vue"]
                   <span class="stack" v-for="(job, i) in sf" :key="i">{{ job }}</span>
                 </span>
               </a>
-              <img src="/mysql.jpeg">
+              <img src="/secret_formula.png">
               <p>
-                Designed and built a task tracker system complete with its own commenting and labelling features
-                as well as provisions for attachments for project management inhouse. 
-                Redesigned and collaborated with like minded individuals on a forum system for the intranet allowing
-                different "forums" to be associated with each aspect of the organization yet linked to the single user.
-                Collaborated with the rest of the team in converting the backend application from a monolithic to a 
-                fully modern microservice collection
+                This project was one of my most rewarding projects in my breif stint as a frontend developer.
+                We worked on a AI cooking assistant able to explain away different recipes, food facts and all
+                from a single picture or text. I had to give up my love of logic for the moment to work on 
+                the client side and this was what tumbled out of it.
+              </p>
+            </li>
+            <li class="job">
+              <a href="https://github.com/Mcsavvy/simple_shell">
+                <span class="hd1">
+                  <span class="role">Simple shell</span>
+                </span>
+                <span class="hd2">
+                  <span class="stack" v-for="(job, i) in simpleShell" :key="i">{{ job }}</span>
+                </span>
+              </a>
+              <img src="/simple_shell.png">
+              <p>
+                This was probably my coming of age ceremony into the world of programming and
+                software engineering. As part of our alx curriculum, I was tasked with building our
+                very own version of the bash. It was very challenging but I had the help and partnership
+                of the very best team mate and buddy  <strong>Dave Mcsavvy</strong>
               </p>
             </li>
         </ul>
@@ -109,7 +125,7 @@ li p {
   align-items: baseline;
 }
 .hd2 {
-  gap: 5px;
+  gap: 7px;
   justify-content: flex-start;
   padding-bottom: 5px;
 }
@@ -126,13 +142,40 @@ li p {
   color: black;
   margin-right: 5px;
 }
-.stack {
-  font-size: 12px;
-  padding: 0 5px;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-  background: var(--secondary);
+@media screen and (max-width: 1000px) {
+  #projects ul li {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  gap: 5px;
   border-radius: 10px;
-    align-self: baseline;
+  padding: 15px;
+  box-shadow: 1px 1px 1px #ccc;
+  }
+}
+@media screen and (max-width: 900px) {
+  #projects ul li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 1px 1px 1px #ccc;
+  }
+}
+@media screen and (max-width: 630px) {
+  #projects ul li {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  align-content: flex-start;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 1px 1px 1px #ccc;
+  }
 }
 </style>

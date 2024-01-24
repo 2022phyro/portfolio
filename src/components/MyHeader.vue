@@ -1,33 +1,33 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-import { ref, onMounted, onUnmounted } from 'vue';
-const isOpen = ref(true)
-const toggleMenu = () => {
-    if (window.innerWidth <= 600) {
-        isOpen.value = !isOpen.value;
-    } else {
-        isOpen.value = true;
-    }
-}
-onMounted(() => {
-    window.addEventListener('resize', toggleMenu);
-});
+defineProps({
+  activeSection: String,
+  hidden: Boolean
+})
+const emit = defineEmits(['scrolledToHeader'])
+const links = [
+  { text: 'me', icn: ['fas', 'user-astronaut'] },
+  { text: 'experience', icn: ['fas', 'briefcase'] },
+  { text: 'projects', icn: ['fas', 'toolbox'] },
+  { text: 'connect', icn: ['fas', 'phone'] }
+]
 
-onUnmounted(() => {
-    window.removeEventListener('resize', toggleMenu);
-});
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+  emit('scrolledToHeader', sectionId)
+};
+
+
 </script>
 <template>
-    <header>
-        <img class="logo" src="/chameleon.jpg">
-        <my-icon :icon="['fas', isOpen? 'xmark': 'bars']" class="menu" @click="toggleMenu" />
-        <nav v-if="isOpen">
-            <RouterLink to="/"><my-icon :icon="['fas', 'igloo']" />Home</RouterLink>
-            <RouterLink to="/#about"><my-icon :icon="['fas', 'user-astronaut']" />About</RouterLink>
-            <RouterLink to="/projects"><my-icon :icon="['fas', 'diagram-project']" />Projects</RouterLink>
-            <RouterLink to="/resume"><my-icon :icon="['far', 'file']" />Resume</RouterLink>
-            <RouterLink to="/contact"><my-icon :icon="['fas', 'link']" />Connect</RouterLink>
+    <header  :class="{ 'hidden': hidden }">
+        <nav>
+            <a v-for="(link, idx) in links" :key="idx" :class="{ 'active': activeSection === link.text }" @click="scrollToSection(link.text)">
+                <my-icon :icon="link.icn" class="icon"/></a>
         </nav>
+        <h2>{{ activeSection }}</h2>
     </header>
 </template>
 <style scoped>
@@ -35,18 +35,37 @@ onUnmounted(() => {
     width: 60px;
     border-radius: 10px;
 }
+h2 {
+    padding-right: 30px;
+    color: var(--secondary);
+    font-family: 'Ubuntu';
+    text-rendering: optimizeLegibility;
+    font-style: italic;
+    text-transform: capitalize;
+    align-self: flex-end;
+    padding: 10px;
+    padding-right: 30px;
+}
+.hidden {
+  transform: translateY(-100%);
+}
+.icon {
+    font-size: 20px;
+    color: var(--secondary);
+
+}
 header {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     position: fixed;
-    padding: 0 30px;
     top: 0;
-    width: 100vw;
+    width: 100%;
     min-height: 60px;
-    display: flex;
+    display: none;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--secondary);
+    background-color: #43766cab;
+    transition: all 0.3s ease-in-out;
     backdrop-filter: blur(5px);
     z-index: 1;
 }
@@ -55,46 +74,30 @@ nav {
     flex-flow: row wrap;
     font-size: 15px;
     justify-content: space-evenly;
-    gap: 25px;
+    /* gap: 25px; */
+    padding-left: 30px;
     align-items: center;
-}
-nav a.router-link-active.router-link-exact-active {
-    /* display: none; */
+    align-self: flex-end;
 }
 nav a {
     display: flex;
-    gap: 4px;
     align-items: center;
+    padding: 10px;
+    border-color: var(--secondary);
+    transition: border 0.3s ease-in-out;
+}
+.active {
+    border: 2px solid var(--secondary);
+    border-bottom: none;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .menu {
     display: none;
 }
-@media screen and (max-width: 600px) {
-    .menu {
-        display: block;
-        position: absolute;
-        right: 30px;
-        top: 20px;
-        font-size: 24px;
-    }
+@media screen and (max-width: 900px) {
     header {
-        flex-flow: column;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 10px 30px;
-    }
-    nav {
-        flex-flow: column wrap;
-        gap: 5px;
-        width: calc(100% - 30px);
-        padding: 20px 0;
-    }
-    nav a {
-        width: 100%;
-        border-color: #ccc;
-        padding: 3px 0;
-        gap: 7px;
-
+        display: flex;
     }
     
 }
