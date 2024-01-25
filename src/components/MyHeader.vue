@@ -31,10 +31,7 @@ const scrollToSection = (sectionId) => {
     </header>
 </template>
 <style scoped>
-.logo {
-    width: 60px;
-    border-radius: 10px;
-}
+
 h2 {
     padding-right: 30px;
     color: var(--secondary);
