@@ -119,15 +119,23 @@ h1 {
   width: 40px;
   height: 40px;
   vertical-align: center;
-  border-radius: 50%;
   font-size: 30px;
   color: var(--secondary);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top-right-radius: 50%;  
+  border-bottom-left-radius: 50%;
+}
+.round.n-2 span.icon,
+.round.n-3 span.icon {
+  border-top-right-radius: 0px;  
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 50%;  
+  border-bottom-right-radius: 50%;
 }
 .icon svg {
-  font-size: 28px;
+  font-size: 24px;
   color: var(--secondary);
 }
 .n-0 {
@@ -140,7 +148,7 @@ h1 {
   grid-row: 2 / span 1;
   grid-column: 6 / span 1;
   align-self: start;
-  justify-self: start;
+  justify-self: start; 
 }
 .n-2 {
   grid-row: 3 / span 1;
@@ -153,7 +161,6 @@ h1 {
   grid-column: 4 / span 1;
   align-self: end;
   justify-self: start;
-  /* border: 3px solid blue; */
 }
 a {
   text-decoration: none;

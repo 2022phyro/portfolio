@@ -104,9 +104,14 @@ a {
 img {
   grid-column: 2 / 2;
   grid-row: 1 / 3;
-  width: 200px;
+  width: 250px;
+  background: #f0f3dade;
+  padding: 0 10px;
+  object-fit: contain;
   height: 150px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   align-self: center;
 }
 li p {
