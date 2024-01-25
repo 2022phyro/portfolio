@@ -40,7 +40,7 @@ h2 {
     font-style: italic;
     text-transform: capitalize;
     align-self: flex-end;
-    padding: 10px;
+    padding-bottom: 12px;
     padding-right: 30px;
 }
 .hidden {
@@ -72,14 +72,14 @@ nav {
     font-size: 15px;
     justify-content: space-evenly;
     /* gap: 25px; */
-    padding-left: 30px;
+    padding-left: 20px;
     align-items: center;
     align-self: flex-end;
 }
 nav a {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 12px;
     border-color: var(--secondary);
     transition: border 0.3s ease-in-out;
 }

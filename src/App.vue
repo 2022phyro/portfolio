@@ -14,14 +14,8 @@ const headerHidden = ref(false);
 const lastScrollTop = ref(0);
 const sections = ['me', 'experience', 'projects', 'connect']
 
-/**
- * handle navigation and scrolling
- */
-const scrolledToEvent = (section) => {
-  activeSection.value = section
-}
  const handleScroll = () => {
-  const scrollPosition = window.scrollY + window.innerHeight / 2.5;
+  const scrollPosition = window.scrollY + window.innerHeight / 3;
   for (const section of sections) {
     const element = document.getElementById(section);
     if (element) {
@@ -47,7 +41,6 @@ const handleHeaderScroll = () => {
   }
   lastScrollTop.value = scrollTop;
 }
-
 onMounted(() => {
   bodyRef.value.addEventListener('scroll', handleScroll);
 });
@@ -71,8 +64,7 @@ onBeforeUnmount(() => {
     :hidden="headerHidden"
     @scrolled-to-header="scrolledToEvent"/>
     <HeroView
-    :activeSection="activeSection"
-    @scrolled-to="scrolledToEvent"/>
+    :activeSection="activeSection"/>
     <span class="divider"></span>
     <div class="body" ref="bodyRef">
       <AboutView/>

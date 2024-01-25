@@ -3,7 +3,6 @@ import TypeWriter from '@/components/TypeWriter.vue'
 defineProps({
   activeSection: String
 })
-const emit = defineEmits(['scrolledTo'])
 const links = [
   { text: 'me', icn: ['fas', 'user-astronaut'] },
   { text: 'experience', icn: ['fas', 'briefcase'] },
@@ -16,8 +15,6 @@ const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
-    emit('scrolledTo', sectionId)
-    // activeSection.value = sectionId;
   }
 };
 
@@ -105,17 +102,17 @@ h1 {
   z-index: 1;
   cursor: pointer;
   opacity: 0.5;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 .round span {
-  font-size: 16px;
+  font-size: 17px;
   font-family: 'Ubuntu';
-  font-weight: 600;
-  color: rgb(51, 50, 50);
+  font-weight: 500;
+  color: rgba(51, 50, 50, 0.719);
   text-transform: capitalize;
 }
 .round span.icon {
-  background-color: rgb(51, 50, 50);
+  background-color: rgba(51, 50, 50, 0.719);
   width: 40px;
   height: 40px;
   vertical-align: center;
@@ -135,7 +132,7 @@ h1 {
   border-bottom-right-radius: 50%;
 }
 .icon svg {
-  font-size: 24px;
+  font-size: 22px;
   color: var(--secondary);
 }
 .n-0 {
@@ -176,6 +173,8 @@ div.active.round .icon {
 }
 div.active.round span {
   color: var(--primary);
+  font-weight: 800;
+  font-size: 18px;
 }
 .aob {
   display: flex;

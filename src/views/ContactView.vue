@@ -1,15 +1,26 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
   <section class="section" id="connect">
     <h2>Let's talk about whatever's been bugging you</h2>
     <ul>
-      <li mail-to="https://phyrokelstein2@gmail.com"><my-icon :icon="['fas', 'envelope']"></my-icon></li>
-      <li><a href="https://x.com/PhyroKelstein"><my-icon :icon="['fab', 'x-twitter']"></my-icon></a></li>
-      <li><a href="https://github.com/2022phyro"><my-icon :icon="['fab', 'github']"></my-icon></a></li>
-      <li><a href="https://ng.linkedin.com/in/afam-ugwuanyi"><my-icon :icon="['fab', 'linkedin']"></my-icon></a></li>
+      <li>
+        <a href="mailto:https://phyrokelstein2@gmail.com?&subject=Say Hi to Afam"
+          ><my-icon :icon="['fas', 'envelope']"></my-icon
+        ></a>
+      </li>
+      <li>
+        <a href="https://x.com/PhyroKelstein"><my-icon :icon="['fab', 'x-twitter']"></my-icon></a>
+      </li>
+      <li>
+        <a href="https://github.com/2022phyro"><my-icon :icon="['fab', 'github']"></my-icon></a>
+      </li>
+      <li>
+        <a href="https://ng.linkedin.com/in/afam-ugwuanyi"
+          ><my-icon :icon="['fab', 'linkedin']"></my-icon
+        ></a>
+      </li>
     </ul>
-</section>
+  </section>
 </template>
 <style scoped>
 ul {
@@ -54,6 +65,6 @@ li a {
   align-items: center;
 }
 #connect {
-  padding-bottom: 150px;
+  padding-bottom: 200px;
 }
 </style>

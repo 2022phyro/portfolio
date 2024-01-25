@@ -104,7 +104,6 @@ img {
   padding: 0 10px;
   object-fit: contain;
   height: 150px;
-  /* border-radius: 10px; */
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
   align-self: center;
@@ -149,7 +148,6 @@ li p {
   flex-flow: column;
   align-content: flex-start;
   gap: 5px;
-  border-radius: 10px;
   padding: 15px;
   box-shadow: 1px 1px 1px #ccc;
   }
@@ -161,7 +159,6 @@ li p {
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   column-gap: 10px;
-  border-radius: 10px;
   padding: 15px;
   box-shadow: 1px 1px 1px #ccc;
   }
@@ -173,7 +170,6 @@ li p {
   flex-flow: column;
   align-content: flex-start;
   gap: 5px;
-  border-radius: 10px;
   padding: 15px;
   box-shadow: 1px 1px 1px #ccc;
   }
