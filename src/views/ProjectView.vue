@@ -75,16 +75,11 @@ const simpleShell = ["c", "linux", "bash", "shell"]
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   column-gap: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 15px;
   box-shadow: 1px 1px 1px #ccc;
-}
-article.job {
-  border-radius: 10px;
-  padding: 15px;
-  background-color: #f0f3dade;
-  margin-top: 10px;
-  box-shadow: 2px 2px 2px #ccc;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 a {

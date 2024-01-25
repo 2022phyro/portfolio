@@ -50,12 +50,14 @@ const intern1 = [
 </template>
 <style scoped>
 article.job {
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 15px;
   background-color: #f0f3dade;
   margin-top: 10px;
   box-shadow: 1px 1px 1px #ccc;
   border: 1px solid #f0f3dade;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 a {

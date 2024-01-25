@@ -3,6 +3,10 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import App from './App.vue'
+import { faFile, faFileLines, faLightbulb } from '@fortawesome/free-regular-svg-icons'
+import { faDiscord, faGithub, faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import {
   faBars,
   faUserAstronaut,
@@ -16,12 +20,6 @@ import {
   faGear,
   faToolbox
 } from '@fortawesome/free-solid-svg-icons'
-import { faFile, faFileLines, faLightbulb } from '@fortawesome/free-regular-svg-icons'
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import App from './App.vue'
-import router from './router'
-import { faDiscord, faGithub, faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 library.add(
   faBars,
   faUserAstronaut,
@@ -45,6 +43,5 @@ library.add(
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
 app.component('my-icon', FontAwesomeIcon)
 app.mount('#app')

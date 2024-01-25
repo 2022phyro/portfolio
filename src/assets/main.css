@@ -1,5 +1,7 @@
 @import './base.css';
-
+html {
+  scroll-behavior: smooth;
+}
 .section {
     color: #1c2e2b;
     padding-top: 30px;
