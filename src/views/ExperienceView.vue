@@ -21,7 +21,7 @@ const intern1 = [
         </span>
       </a>
       <p>
-        Implements and teach modern principles and pratices in web development.    
+        Implements and teach modern principles and practices in web development.    
         Aided in the design and implementation of an in house learning management system for use
         by the students    
       </p>
