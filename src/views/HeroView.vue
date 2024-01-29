@@ -39,7 +39,7 @@ const scrollToSection = (sectionId) => {
         </div>
       </div>
       <div class="aob">
-        <a href="/resume.txt" class="button">
+        <a href="/resume.pdf" class="button">
           <my-icon :icon="['far', 'file-lines']" />
           <span>My resume</span>
         </a>
